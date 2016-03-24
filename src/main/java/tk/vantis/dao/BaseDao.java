@@ -3,23 +3,17 @@ package tk.vantis.dao;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.annotation.PostConstruct;
-
 /**
  * BaseDao
  * Created by Vantis on 2016/3/24.
  */
-public class BaseDao {
+public abstract class BaseDao {
 
     @Autowired
     private SqlSessionTemplate readOnlySessionTemplate;
 
     @Autowired
     private SqlSessionTemplate editableSessionTemplate;
-    @PostConstruct
-    public void init() {
-
-    }
 
     protected <T> T selectOne(String statement) {
         return readOnlySessionTemplate.selectOne(statement);

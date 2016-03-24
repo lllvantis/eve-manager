@@ -7,7 +7,7 @@ import java.util.List;
  * Created by Vantis on 2016/3/24.
  */
 
-public class User {
+public class WebUser {
     private long id;
     private String password;
     private List<EveAccount> eveAccountList;

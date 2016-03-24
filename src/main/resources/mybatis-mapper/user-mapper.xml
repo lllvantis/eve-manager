@@ -2,8 +2,21 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="tk.vantis.sql">
-    <select id="web_get_user"resultType="User">
-SELECT * FROM eve.
+
+<mapper namespace="tk.vantis.web_user.sql">
+
+    <select id="web_get_user" parameterType="int" resultType="tk.vantis.model.WebUser">
+        SELECT *
+        FROM eve.web_user
+        WHERE
+            Id = #{id};
+    </select>
+
+    <select id="web_check_user" parameterType="HashMap" resultType="tk.vantis.model.WebUser">
+        SELECT *
+        FROM eve.web_user
+        WHERE
+            user_name = #{user_name}
+            AND password = #{password};
     </select>
 </mapper>
