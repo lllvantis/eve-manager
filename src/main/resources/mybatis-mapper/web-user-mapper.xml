@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="tk.vantis.web_user.sql">
+
+    <select id="web_get_user" parameterType="int" resultType="tk.vantis.model.WebUser">
+        SELECT
+            Id        id,
+            user_name userName,
+            password  password,
+            created   created,
+            creator   creator,
+            modified  modified,
+            modifier  modifier
+        FROM eve.web_user
+        WHERE
+            Id = #{id};
+    </select>
+
+    <select id="web_check_user" parameterType="HashMap" resultType="tk.vantis.model.WebUser">
+        SELECT
+            Id        id,
+            user_name userName,
+            password  password,
+            created   created,
+            creator   creator,
+            modified  modified,
+            modifier  modifier
+        FROM eve.web_user
+        WHERE
+            user_name = #{userName}
+            AND password = #{password};
+    </select>
+
+    <update id="web_update_user" parameterType="tk.vantis.model.WebUser">
+        UPDATE eve.web_user
+        SET user_name = #{userName},
+        password = #{password},
+        modifier = #{modifier}
+        WHERE Id = #{Id};
+    </update>
+
+    <delete id="web_delete_user" parameterType="tk.vantis.model.WebUser">
+        DELETE FROM eve.web_user
+        WHERE Id = #{Id};
+    </delete>
+
+    <insert id="web_add_user" parameterType="tk.vantis.model.WebUser">
+        INSERT INTO eve.web_user (user_name, password, created, creator)
+            VALUE (
+            #{userName},
+            #{password},
+            now(),
+            #{creator}
+        )
+    </insert>
+</mapper>

@@ -7,17 +7,35 @@ import java.util.List;
  * Created by Vantis on 2016/3/24.
  */
 
-public class WebUser {
-    private long id;
+public class WebUser extends BaseBean {
+    private int id;
+    private String userName;
     private String password;
     private List<EveAccount> eveAccountList;
+
+    public WebUser() {
+
+    }
+
+    public WebUser(String userName, String password) {
+        this.setUserName(userName);
+        this.password = password;
+    }
 
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public String getUser_name() {
+        return userName;
+    }
+
+    public void setUserName(String user_name) {
+        this.userName = user_name;
     }
 
     public String getPassword() {
@@ -34,5 +52,15 @@ public class WebUser {
 
     public void setEveAccountList(List<EveAccount> eveAccountList) {
         this.eveAccountList = eveAccountList;
+    }
+
+    @Override
+    public String toString() {
+        return "WebUser{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", eveAccountList=" + eveAccountList +
+                '}';
     }
 }

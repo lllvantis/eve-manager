@@ -23,10 +23,15 @@ public abstract class BaseDao {
         return readOnlySessionTemplate.selectOne(statement, parameter);
     }
 
-    protected void updateOne(String statement) {
-        editableSessionTemplate.update(statement);
-    }
     protected void updateOne(String statement, Object parameter) {
         editableSessionTemplate.update(statement, parameter);
+    }
+
+    protected void deleteOne(String statement, Object parameter) {
+        editableSessionTemplate.delete(statement, parameter);
+    }
+
+    protected void addOne(String statement, Object parameter) {
+        editableSessionTemplate.insert(statement, parameter);
     }
 }
