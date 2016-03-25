@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="tk.vantis.eve_account.sql">
+
+    <select id="eve_account_list_get" parameterType="tk.vantis.model.WebUser" resultType="List">
+        SELECT
+            userId   userId,
+            account  account,
+            password password,
+            created  created,
+            creator  creator,
+            modified modified,
+            modifier modifier
+        FROM eve.eve_account
+        WHERE userId = #{userId};
+    </select>
+</mapper>

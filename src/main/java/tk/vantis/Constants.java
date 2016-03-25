@@ -8,4 +8,5 @@ public class Constants {
     public static final String HOST = "auth.eve-online.com.cn";
 
     public static final String DAO_NAME_SPACE_WEB_USER = "tk.vantis.web_user.sql.";
+    public static final String DAO_NAME_SPACE_EVE_ACCOUNT = "tk.vantis.eve_account.sql.";
 }
