@@ -128,3 +128,7 @@ $RECYCLE.BIN/
 *.lnk
 
 key.properties
+
+target/
+
+lib/

@@ -17,4 +17,8 @@ public class EveAccountDao extends BaseDao {
     public List<EveAccount> getEveAccountList(WebUser webUser) {
         return selectList(Constants.DAO_NAME_SPACE_EVE_ACCOUNT, webUser);
     }
+
+    public void addEveAccount(EveAccount eveAccount) {
+        //TODO 单个添加账号
+    }
 }

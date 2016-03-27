@@ -1,13 +1,16 @@
 package tk.vantis.model;
 
+import java.time.LocalDateTime;
+
 /**
  * EveAccount
  * Created by Vantis on 2016/3/24.
  */
 public class EveAccount extends BaseBean {
-    String account;
-    String password;
-    String token;
+    private String account;
+    private String password;
+    private String token;
+    private LocalDateTime tokenTime;
 
     public String getAccount() {
         return account;
@@ -31,5 +34,13 @@ public class EveAccount extends BaseBean {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public LocalDateTime getTokenTime() {
+        return tokenTime;
+    }
+
+    public void setTokenTime(LocalDateTime tokenTime) {
+        this.tokenTime = tokenTime;
     }
 }
