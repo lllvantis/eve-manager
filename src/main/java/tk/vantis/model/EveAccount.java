@@ -7,10 +7,19 @@ import java.time.LocalDateTime;
  * Created by Vantis on 2016/3/24.
  */
 public class EveAccount extends BaseBean {
+    private int id;
     private String account;
     private String password;
     private String token;
     private LocalDateTime tokenTime;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getAccount() {
         return account;
@@ -42,5 +51,16 @@ public class EveAccount extends BaseBean {
 
     public void setTokenTime(LocalDateTime tokenTime) {
         this.tokenTime = tokenTime;
+    }
+
+    @Override
+    public String toString() {
+        return "EveAccount{" +
+                "id=" + id +
+                ", account='" + account + '\'' +
+                ", password='" + password + '\'' +
+                ", token='" + token + '\'' +
+                ", tokenTime=" + tokenTime +
+                '}';
     }
 }

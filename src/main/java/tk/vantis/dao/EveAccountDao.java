@@ -15,10 +15,23 @@ import java.util.List;
 public class EveAccountDao extends BaseDao {
 
     public List<EveAccount> getEveAccountList(WebUser webUser) {
-        return selectList(Constants.DAO_NAME_SPACE_EVE_ACCOUNT, webUser);
+        return selectList(Constants.DAO_NAME_SPACE_EVE_ACCOUNT + "eve_account_list_get", webUser);
     }
 
     public void addEveAccount(EveAccount eveAccount) {
-        //TODO 单个添加账号
+        addOne(Constants.DAO_NAME_SPACE_EVE_ACCOUNT, eveAccount);
+    }
+
+    public void deleteOneEveAccount(EveAccount eveAccount) {
+        deleteOne(Constants.DAO_NAME_SPACE_EVE_ACCOUNT + "eve_account_delete", eveAccount);
+    }
+
+    public void deleteAllEveAccount(WebUser webUser) {
+        for(EveAccount eveAccount : webUser.getEveAccountList())
+            deleteOne(Constants.DAO_NAME_SPACE_EVE_ACCOUNT + "eve_account_delete", eveAccount);
+    }
+
+    public void editEveAccount(EveAccount eveAccount) {
+        updateOne(Constants.DAO_NAME_SPACE_EVE_ACCOUNT, eveAccount);
     }
 }

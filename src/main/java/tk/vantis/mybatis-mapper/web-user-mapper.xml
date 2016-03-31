@@ -15,11 +15,10 @@
             modified  modified,
             modifier  modifier
         FROM eve.web_user
-        WHERE
-            Id = #{id};
+        WHERE Id = #{id};
     </select>
 
-    <select id="web_check_user" parameterType="HashMap" resultType="tk.vantis.model.WebUser">
+    <select id="web_check_user" parameterType="HashMap" resultType="tk.vantis.model.LoginWebUser">
         SELECT
             Id        id,
             user_name userName,

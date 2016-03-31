@@ -5,7 +5,7 @@
 
 <mapper namespace="tk.vantis.eve_account.sql">
 
-    <select id="eve_account_list_get" parameterType="tk.vantis.model.WebUser" resultType="List">
+    <select id="eve_account_list_get" parameterType="tk.vantis.model.EveAccount" resultType="List">
         SELECT
             userId   userId,
             account  account,
@@ -17,4 +17,9 @@
         FROM eve.eve_account
         WHERE userId = #{userId};
     </select>
+
+    <delete id="eve_account_delete" parameterType="tk.vantis.model.EveAccount">
+        DELETE FROM eve.eve_account
+        WHERE id = #{id};
+    </delete>
 </mapper>
