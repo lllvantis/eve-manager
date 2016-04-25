@@ -10,6 +10,8 @@ import tk.vantis.service.LoginService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 
 /**
@@ -17,7 +19,6 @@ import java.util.HashMap;
  * Created by Vantis on 2016/3/30.
  */
 @Controller
-@RequestMapping(value = "/login.do")
 public class LoginController {
 
     private static Logger logger = Logger.getLogger(LoginController.class);
@@ -25,14 +26,27 @@ public class LoginController {
     @Autowired
     LoginService loginService;
 
-    @RequestMapping(value = "/login.do", method = RequestMethod.POST)
+    @RequestMapping(value = "login.do", method = RequestMethod.POST)
     public void login(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         HashMap<String, String> loginUser = new HashMap<>();
         loginUser.put("loginUser", httpServletRequest.getParameter("user_name"));
         loginUser.put("loginPassword", httpServletRequest.getParameter("password"));
         WebUser authorizedUser = loginService.login(loginUser);
         if (null == authorizedUser) {
-
+            logger.debug(httpServletRequest.getParameter("user_name") + ": 尝试登录失败.");
+            PrintWriter printWriter = null;
+            try {
+                httpServletResponse.setContentType("text/xml;charset=utf-8");
+                printWriter = httpServletResponse.getWriter();
+                //TODO 测试ing
+                printWriter.write("test");
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if(null != printWriter) {
+                    printWriter.close();
+                }
+            }
         } else {
 
         }

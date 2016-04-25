@@ -26,4 +26,5 @@ public class LoginService {
                 .MD5_SALT, Constants.MD5_TIME).toString());
         return webUserDao.getAuthorizedUser(md5edUser);
     }
+
 }
