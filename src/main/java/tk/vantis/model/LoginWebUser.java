@@ -6,8 +6,8 @@ package tk.vantis.model;
  */
 public class LoginWebUser {
 
-    String userName;
-    String password;
+    private String userName;
+    private String password;
 
     public LoginWebUser(String loginUser, String password) {
         this.userName = loginUser;

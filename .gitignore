@@ -128,6 +128,7 @@ $RECYCLE.BIN/
 *.lnk
 
 key.properties
+application.yml
 
 target/
 

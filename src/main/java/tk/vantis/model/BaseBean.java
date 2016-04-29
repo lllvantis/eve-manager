@@ -6,7 +6,8 @@ import java.time.LocalDateTime;
  * BaseBean
  * Created by Vantis on 2016/3/25.
  */
-public class BaseBean {
+
+abstract class BaseBean {
     private LocalDateTime created;
     private String creator;
     private LocalDateTime modified;

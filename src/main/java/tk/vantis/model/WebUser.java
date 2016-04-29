@@ -11,6 +11,7 @@ public class WebUser extends BaseBean {
     private int id;
     private String userName;
     private String password;
+
     private List<EveAccount> eveAccountList;
 
     public WebUser() {
@@ -22,7 +23,7 @@ public class WebUser extends BaseBean {
         this.password = password;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
