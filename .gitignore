@@ -127,9 +127,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-key.properties
 application.yml
 
 target/
 
 lib/
+web/

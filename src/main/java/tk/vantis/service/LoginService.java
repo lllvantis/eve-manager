@@ -21,10 +21,12 @@ public class LoginService {
     WebUserDao webUserDao;
 
     public WebUser login(Map<String, String> loginUser) {
-        LoginWebUser md5edUser = new LoginWebUser(loginUser.get("loginUser"),
-        new Md5Hash(loginUser.get("loginPassword"), loginUser.get("loginUser") + Constants
+        LoginWebUser md5edUser = new LoginWebUser();
+
+        md5edUser.setUserName(loginUser.get("loginUser"));
+        md5edUser.setPassword(new Md5Hash(loginUser.get("loginPassword"), loginUser.get("loginUser") + Constants
                 .MD5_SALT, Constants.MD5_TIME).toString());
+
         return webUserDao.getAuthorizedUser(md5edUser);
     }
-
 }

@@ -9,11 +9,6 @@ public class LoginWebUser {
     private String userName;
     private String password;
 
-    public LoginWebUser(String loginUser, String password) {
-        this.userName = loginUser;
-        this.password = password;
-    }
-
     public String getUserName() {
         return userName;
     }

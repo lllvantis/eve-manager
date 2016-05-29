@@ -15,36 +15,36 @@ import java.util.List;
 public abstract class BaseDao {
 
     @Autowired
-    private SqlSessionTemplate readOnlySessionTemplate;
+    private SqlSessionTemplate readOnlySqlSessionTemplate;
 
     @Autowired
-    private SqlSessionTemplate editableSessionTemplate;
+    private SqlSessionTemplate writableSqlSessionTemplate;
 
     protected <T> T selectOne(String statement) {
-        return readOnlySessionTemplate.selectOne(statement);
+        return readOnlySqlSessionTemplate.selectOne(statement);
     }
 
     protected <T> T selectOne(String statement, Object parameter) {
-        return readOnlySessionTemplate.selectOne(statement, parameter);
+        return readOnlySqlSessionTemplate.selectOne(statement, parameter);
     }
 
     protected <E> List<E> selectList(String statement) {
-        return readOnlySessionTemplate.selectList(statement);
+        return readOnlySqlSessionTemplate.selectList(statement);
     }
 
     protected <E> List<E> selectList(String statement, Object parameter) {
-        return readOnlySessionTemplate.selectList(statement, parameter);
+        return readOnlySqlSessionTemplate.selectList(statement, parameter);
     }
 
     protected void updateOne(String statement, Object parameter) {
-        editableSessionTemplate.update(statement, parameter);
+        writableSqlSessionTemplate.update(statement, parameter);
     }
 
     protected void deleteOne(String statement, Object parameter) {
-        editableSessionTemplate.delete(statement, parameter);
+        writableSqlSessionTemplate.delete(statement, parameter);
     }
 
     protected void addOne(String statement, Object parameter) {
-        editableSessionTemplate.insert(statement, parameter);
+        writableSqlSessionTemplate.insert(statement, parameter);
     }
 }

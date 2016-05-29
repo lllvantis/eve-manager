@@ -1,5 +1,5 @@
-EVE Manager - For we players in Dawn
-====================================
+# EVE Manager - For we players in Dawn
+
 In the server Dawn, we can only add skills to be trained limited. So we need to know when our skill training bar will be empty.
  
 This project targets on this.

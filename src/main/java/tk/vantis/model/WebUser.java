@@ -14,15 +14,6 @@ public class WebUser extends BaseBean {
 
     private List<EveAccount> eveAccountList;
 
-    public WebUser() {
-
-    }
-
-    public WebUser(String userName, String password) {
-        this.setUserName(userName);
-        this.password = password;
-    }
-
     public int getId() {
         return id;
     }
