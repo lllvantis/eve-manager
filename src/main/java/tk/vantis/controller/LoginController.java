@@ -26,7 +26,7 @@ public class LoginController {
     @Autowired
     LoginService loginService;
 
-    @RequestMapping(value = "login.do", method = RequestMethod.POST)
+    @RequestMapping(value = "login.do", method = RequestMethod.GET)
     public void login(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         HashMap<String, String> loginUser = new HashMap<>();
         loginUser.put("loginUser", httpServletRequest.getParameter("user_name"));

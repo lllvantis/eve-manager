@@ -130,6 +130,7 @@ $RECYCLE.BIN/
 key.properties
 application.yml
 
-target/
+data-source.xml
 
+target/
 lib/
