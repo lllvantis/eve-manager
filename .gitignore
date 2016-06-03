@@ -132,5 +132,5 @@ application.yml
 
 data-source.xml
 
-target/
-lib/
+*/target/
+*/lib/
