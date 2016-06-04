@@ -127,9 +127,12 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+key.properties
 application.yml
 
-target/
+data-source.xml
 
-lib/
 web/
+
+*/target/
+*/lib/
