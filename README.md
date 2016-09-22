@@ -1,4 +1,4 @@
-# EVE Manager - For we players in Dawn
+# EVE Manager - For we players in Dawn[![Build Status](https://travis-ci.org/lllvantis/eve-manager.svg?branch=master)](https://travis-ci.org/lllvantis/eve-manager)
 
 In the server Dawn, we can only add skills to be trained limited. So we need to know when our skill training bar will be empty.
  
